@@ -30,16 +30,16 @@ git clone https://github.com/AlanBayWalker/space-xplorer.git
 npm install
 ```
 
-Start the server
+3. Start the server
 
 ```
 npm run start
 ```
 
-Explore
+4. Explore
 
 ```
-4. Enjoy :)
+Enjoy :)
 ```
 
 ## Built With
