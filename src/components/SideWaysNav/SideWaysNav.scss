@@ -1,0 +1,47 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.SideWaysNavContainer {
+  margin-top: 2rem;
+  //position: absolute;
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      @include secondaryFont();
+      font-size: 1.3rem;
+      letter-spacing: .5rem;
+      margin: 1rem 0;
+    }
+
+    li:hover {
+      color: #fff;
+    }
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .SideWaysNavContainer {
+    left: 1rem;
+    position: absolute;
+    margin: 0;
+    top: 36vh;
+    z-index: 2;
+
+    li {
+      font-size: 1.3rem;
+      letter-spacing: .5rem;
+      margin: 1rem 0;
+      writing-mode: vertical-lr;
+      text-orientation: sideways;
+    }
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .SideWaysNavContainer {
+    top: 34vh;
+  }
+}
