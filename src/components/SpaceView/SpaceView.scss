@@ -1,0 +1,366 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+#viewDiv {
+  background: #000 url('../../images/star-background.jpg') no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100vw;
+
+  .esri-layer-list {
+    background-color: rgba(42, 49, 64, .2);
+    display: none;
+    height: 38vh;
+    left: calc(-54vw * 1.5);
+    position: absolute;
+    bottom: -45rem;
+    z-index: 10;
+  }
+
+  .esri-layer-list::-webkit-scrollbar {
+    opacity: .1;
+  }
+
+  .esri-layer-list::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 100px;
+    background-color: rgba(255,255,255,.2);
+  }
+
+  .esri-layer-list::-webkit-scrollbar-thumb {
+      border-radius: 100px;
+      background-color: $primary-color;
+      box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+  }
+
+  .esri-attribution {
+    display: none;
+  }
+
+
+  .layerInfo {
+    background-color: $primary-font-color;
+    height: 99vh;
+    padding: 5rem 2rem;
+    position: absolute;
+    top: 0vh;
+    width: calc(75vw + 14%);
+    z-index: 20;
+
+    .closeBtn {
+      cursor: pointer;
+      height: 70px;
+      left: 10px;
+      position: absolute;
+      top: 10px;
+      width: 70px;
+    }
+
+    h2 {
+      font-size: 1rem;
+    }
+  }
+
+  .mapInfo {
+    background-color: rgba(0,0,0,.5);
+    border-radius: 20px;
+    color: $primary-font-color;
+    left: calc(-6.5vw + 14%);
+    padding: 1rem;
+    position: absolute;
+    top: 7rem;
+    width: 80vw;
+    z-index: 10;
+
+    .infoSection {
+      background: none;
+    }
+
+    button {
+      background: $primary-color;
+      border: none;
+      cursor: pointer;
+
+      svg {
+        fill: #fff;
+        height: 40px;
+        width: 40px;
+      }
+    }
+
+    .mapInfoMinus, .mapInfoPlus {
+      margin: 0 1rem;
+    }
+  }
+​
+
+  .mainMenu {
+    position: static;
+    z-index: 2;
+  }
+
+  .mainNav {
+    opacity: .5;
+  }
+
+  .removeMapInfo {
+    display: none;
+  }
+
+  .toHome {
+    position: absolute;
+    top: 1rem;
+    right: 7.5rem;
+
+    svg {
+      fill: $primary-font-color;
+      height: 45px;
+      width: 45px;
+    }
+  }
+}
+
+@media only screen and (min-width: 530px) {
+  #viewDiv {
+    .esri-layer-list {
+      left: calc(-50vw * 1.5);
+    }
+  }
+}
+
+@media only screen and (min-width: 550px) {
+  #viewDiv {
+    .esri-layer-list {
+      left: calc(-45vw * 1.5);
+    }
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  #viewDiv {
+    .layerInfo {
+      padding: 5rem;
+      width: calc(59vw + 20%);
+    }
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  #viewDiv {
+
+    .esri-layer-list {
+      height: 60vh;
+      left: calc(-95vw + 100%);
+      top: 9rem;
+    }
+
+    .esri-scale-bar__label {
+      color: #fff;
+      text-shadow: none;
+    }
+
+    .esri-scale-bar__line--bottom {
+      background-color: rgba(255,255,255,.8);
+    }
+
+    .layerInfo {
+      height: auto;
+      left: 10%;
+      padding: 5rem;
+      top: 10%;
+      width: calc(40vw + 20%);
+    }
+
+    .mapInfo {
+      right: 3rem;
+      left: auto;
+      top: 10rem;
+      width: 50%;
+    }
+
+    .navContainer {
+      display: grid;
+      grid-template-columns: repeat(2, 50px);
+      grid-template-rows: 30px;
+      margin: 1.5rem;
+      position: absolute;
+      right: 0;
+      text-transform: uppercase;
+
+      .navMenuIconContainer {
+        font-size: .7rem;
+        margin: 1rem;
+        position: absolute;
+        right: -95vw;
+
+        .toggle-icon {
+          display: block;
+        }
+      }
+
+      .activeNavMenuIconContainer {
+        margin-top: 5px;
+        padding: 0;
+        position: static;
+      }
+
+      .mainNav {
+        @include secondaryFont();
+        background-color: $secondary-color;
+        color: $primary-font-color;
+        display: none;
+        font-size: 1.4rem;
+        height: 86vh;
+        left:-webkit-calc(-100vw + 100%);
+        left:-moz-calc(-100vw + 100%);
+        left:calc(-100vw + 100%);
+        list-style: none;
+        margin: 0;
+        opacity: .5;
+        padding: 8rem 4rem 0;
+        position: relative;
+        text-align: left;
+        top: -1.5rem;
+        width: calc(86vw + 100%);
+        z-index: 5;
+
+        a:hover {
+          color: $primary-font-color;
+        }
+      }
+
+      .searchBarContainer {
+        display: grid;
+        grid-template-columns: repeat(4, 100vw / 4);
+        grid-template-rows: 2rem;
+        left:-webkit-calc(-100vw + 120%);
+        left:-moz-calc(-100vw + 120%);
+        left:calc(-100vw + 120%);
+        margin: 0;
+        position: absolute;
+        width: 2rem;
+        z-index: 10;
+      }
+
+      .activeSearchBarContainer {
+        width: 95vw;
+      }
+
+      .searchIcon {
+        border-radius: 20px;
+        justify-self: end;
+        fill: rgba(255, 255, 255, .6);
+        grid-area: 1 / 4 / 1 / 5;
+        height: 100%;
+        padding: 4px;
+        width: 80px;
+      }
+
+      .searchIcon:hover {
+        fill: $primary-font-color;
+        cursor: pointer;
+      }
+
+      .remove {
+        display: none;
+      }
+
+      .reveal {
+        display: block;
+      }
+
+      .activeSearchIcon {
+        background-color: $primary-color;
+        margin-top: 11px;
+      }
+
+      .searchBar {
+        border-radius: 20px;
+        grid-area: 1 / 2 / 1 / 4;
+        height: 0;
+        margin-right: 1rem;
+        overflow: hidden;
+        margin-left: .5rem;
+        opacity: 0;
+        outline: none;
+        padding: 1.1rem;
+        position: absolute;
+        right: -100%;
+        transition: width 1s;
+        width: 0;
+        z-index: -2;
+      }
+
+      .activeSearchBar {
+        margin-right: 1rem;
+        opacity: 1;
+        width: 300px;
+      }
+
+      .selected {
+        color: $primary-font-color;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1220px) {
+  #viewDiv {
+
+    .esri-layer-list {
+      left: calc(-90vw + 100%);
+    }
+
+    .layerInfo {
+      left: 14%;
+    }
+
+    .mapInfo {
+      right: 8rem;
+    }
+
+    .navContainer {
+      .mainNav {
+        width: calc(90vw + 100%);
+      }
+    }
+
+    .searchBarContainer {
+      max-width: initial;
+      .activeSearchBar {
+        position: absolute;
+        right: .7rem;
+      }
+    }
+
+    .toHome {
+      right: 9.5rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 1580px) {
+  #viewDiv {
+
+    .esri-layer-list {
+      left: calc(-86vw + 100%);
+    }
+
+    .mapInfo {
+      right: 12rem;
+    }
+
+    .layerInfo {
+      left: 16%;
+    }
+
+    .navContainer {
+      .mainNav {
+        width: calc(91vw + 100%);
+      }
+    }
+  }
+}

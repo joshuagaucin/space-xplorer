@@ -1,0 +1,27 @@
+@import './variables';
+
+@mixin primaryFont() {
+  color: $primary-font-color;
+  font-family: $primary-font-family;
+  font-weight: bold;
+}
+
+@mixin secondaryFont() {
+  color: $secondary-font-color;
+  font-family: $secondary-font-family;
+  letter-spacing: .2rem;
+}
+
+@mixin primaryButton() {
+  background-color: $primary-color;
+  border-radius: 20px;
+  color: $primary-font-color;
+  font-family: $secondary-font-family;
+  margin: 4rem auto 0;
+  max-width: 450px;
+  padding: .5rem;
+  width: 80%;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: .3rem;
+}
