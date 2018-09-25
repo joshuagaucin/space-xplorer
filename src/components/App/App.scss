@@ -1,0 +1,11 @@
+@import '../../styles/variables';
+
+.App {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+*::selection {
+  background: $primary-color;
+  color: white;
+}
