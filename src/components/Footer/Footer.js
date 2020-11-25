@@ -59,7 +59,7 @@ function Footer() {
         <hr/>
 
         <div className="footerCopyright">
-          <p>&copy;2018 Code and Design by <a href="http://www.abwtechnologies.com/" target="_blank" rel="noopener noreferrer">Alan Ayala</a>. Data provided by <a href="https://api.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA</a>.</p>
+          <p>&copy;2018 Code and Design by <a href="https://joshuagaucin.github.io/Portfolio/" target="_blank" rel="noopener noreferrer">Joshua Gaucin</a>. Data provided by <a href="https://api.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA</a>.</p>
           <p></p>
         </div>
 
